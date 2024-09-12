@@ -46,7 +46,7 @@ async def run_offer(pc, session):
     offer = await pc.createOffer()
     await pc.setLocalDescription(offer)
     
-    async with session.post('http://35.188.155.187:4000/offer', json={
+    async with session.post('http://YOURIP:PORT/offer', json={
         'sdp': pc.localDescription.sdp,
         'type': pc.localDescription.type
     }) as response:
